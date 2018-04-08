@@ -12,8 +12,13 @@ create view dailyRequests as select count(*) as requests, date(TIME) as date fro
 
 create view dailyErrors as select date(TIME) as date, count(*) as errors from log where log.status = '404 NOT FOUND' group by date order by errors desc;
 
-You will need to install the following: Python3 Vagrant VirtualBox
+You will need to install the following: 
+  Python3 Vagrant VirtualBox
 
-Setup: First install Vagrant and VirtualBox Clone repository
+Setup: 
+  First install Vagrant and VirtualBox Clone repository
 
-To properly run: Launch Vagrant by running vagrant up, then login with vagrant ssh Then run psql -d news -f newsdata.sql to connect to the database to execute the program, run python3 logProject.py from command line
+To properly run: 
+  Launch Vagrant by running vagrant up, then login with vagrant ssh 
+  Then run psql -d news -f newsdata.sql to connect to the database 
+  To execute the program, run python3 logProject.py from command line
