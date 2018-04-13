@@ -1,12 +1,12 @@
 # logProjectRedo
 
-this is a resubmission of the log analysis porject for Udacity
+this is a resubmission of the log analysis project for Udacity
 
 This is the third project of the Udacity Full Stack Nanodegree.
 
 To run correctly, the followin views must be created:
 
-create view artilceViews as select articles.author, count(*) as views from articles join log on log.path like concat('%', articles.slug, '%') where log.status = '200 OK' group by articles.author;
+create view articleViews as select articles.author, count(*) as views from articles join log on log.path like concat('%', articles.slug, '%') where log.status = '200 OK' group by articles.author;
 
 create view dailyRequests as select count(*) as requests, date(TIME) as date from log where status = '200 OK' group by date order by requests desc;
 
