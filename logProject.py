@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import psycopg2
 
 query1 = (
@@ -27,10 +28,12 @@ query3 = (
 
 def connect(database_name="news"):
     """connect to database"""
-    db = psycopg2.connect("dbname={}".format(database_name))
-    cursor = db.cursor()
-    return db, cursor
-
+    try:   
+        db = psycopg2.connect("dbname={}".format(database_name))
+        cursor = db.cursor()
+        return db, cursor
+    except:
+        print("Database does not exist")
 
 def getQueryResults(query):
     """Return query results for given query"""
@@ -51,7 +54,7 @@ def printErrorResults(query_results):
     for results in query_results:
         print(results[0], results[1], "% errors")
 
-
+if ___name___ == "___main___":
 """run queries and save reults"""
 popularArticlesResults = getQueryResults(query1)
 popularAuthorsResults = getQueryResults(query2)
