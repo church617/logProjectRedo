@@ -54,7 +54,6 @@ def printErrorResults(query_results):
     for results in query_results:
         print(results[0], results[1], "% errors")
 
-if ___name___ == "___main___":
 """run queries and save reults"""
 popularArticlesResults = getQueryResults(query1)
 popularAuthorsResults = getQueryResults(query2)
