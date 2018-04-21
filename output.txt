@@ -1,10 +1,15 @@
+Top three articles by view count
 ('Candidate is jerk, alleges rival', ' - ', 338647L, 'views')
 ('Bears love berries, alleges bear', ' - ', 253801L, 'views')
 ('Bad things gone, say good people', ' - ', 170098L, 'views')
+
+
 Most popular Authors by view count
 ('Ursula La Multa', ' - ', 507594L, 'views')
 ('Rudolf von Treppenwitz', ' - ', 423457L, 'views')
 ('Anonymous Contributor', ' - ', 170098L, 'views')
 ('Markoff Chaney', ' - ', 84557L, 'views')
+
+
 Days with more than 1% errors
-(datetime.date(2016, 7, 17), Decimal('2.00'), '% errors')
+(datetime.date(2016, 7, 17), Decimal('2.26'), '% errors')
