@@ -8,7 +8,7 @@ To run correctly, the followin views must be created:
 
 create view articleViews as select articles.author, count(*) as views from articles join log on log.path like concat('%', articles.slug, '%') where log.status = '200 OK' group by articles.author;
 
-create view dailyRequests as select count(*) as requests, date(TIME) as date from log where status = '200 OK' group by date order by requests desc;
+create view dailyRequests as select count(*) as requests, date(TIME) as date from log group by date order by requests desc;
 
 create view dailyErrors as select date(TIME) as date, count(*) as errors from log where log.status = '404 NOT FOUND' group by date order by errors desc;
 
