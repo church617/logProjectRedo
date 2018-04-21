@@ -19,7 +19,7 @@ query2 = (
 
 query3 = (
     "select dailyErrors.date, "
-    "round(100*dailyErrors.errors/dailyRequests.requests,2) "
+    "round(100.0*dailyErrors.errors/dailyRequests.requests,2) "
     "as percentErrors from dailyErrors, dailyRequests where "
     "dailyErrors.date=dailyRequests.date order by percentErrors "
     "desc limit 1;"
